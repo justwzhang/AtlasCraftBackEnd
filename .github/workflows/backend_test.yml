@@ -19,4 +19,5 @@ jobs:
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.3
       with:
+        node-version: 14.12.0
         jestArgs: ./__tests__/userRoutes.test.js # change this to the correct path
