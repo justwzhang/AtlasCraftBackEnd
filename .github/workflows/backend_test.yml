@@ -1,0 +1,19 @@
+# name: Tests
+
+# on: [push]
+
+# defaults:
+#   run:
+#     working-directory: ./Top5Lister/server
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Run Jest
+#       uses: stefanoeb/jest-action@1.0.3
+#       with:
+#         jestArgs: ./Top5Lister/server/__tests__/userRoutes.test.js # change this to the correct path
