@@ -1,23 +1,13 @@
-name: Tests
 
-on: [push]
-
-# defaults:
-#   run:
-#     working-directory: ./Top5Lister/server
-
+name: Test Server Workflow
+on: push # Run this workflow whenever a push occurs
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  test-server:
+    runs-on: ubuntu-latest # Run the job on an Ubuntu environment
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 14.12.0
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.3
-      with:
-        node-version: 14.12.0
-        jestArgs: ./__tests__/userRoutes.test.js # change this to the correct path
+      - name: Checkout code
+        uses: actions/checkout@v2 # Checkout the latest code from the repository
+      - name: Install dependencies
+        run: cd Top5Lister/server && npm install # Change to the server folder and install dependencies
+      - name: Run tests
+        run: cd Top5Lister/server && npm test # Change to the server folder and run tests
